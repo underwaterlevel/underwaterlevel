@@ -1,0 +1,51 @@
+{% if post.header.overlay_image %}
+  {% capture overlay_image %}{{ post.header.overlay_image }}{% endcapture %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | absolute_url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ post.url | absolute_url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    <p class="page__meta">
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{post.date | date: "%B %d, %Y"}}<br/>
+        <i class="fa fa-folder-o" aria-hidden="true"></i> Filed under{% for category in post.categories %} | <a href="/categories/{{category | slugify}}">{{category}}</a>{% endfor %}<br/>
+    {% if post.read_time %}
+        <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}
+    {% endif %}
+    </p>
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | absolute_url }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% else %}
+      <!-- Add overlay_image to home page listing if this is not grid (related posts) display. -->
+      {% if overlay_image and include.type != "grid" %}
+        <div><a href="{{ post.url | absolute_url }}" rel="permalink"><div class="page__hero--overlay-home" style=" background-image: url({{overlay_image | absolute_url}});"></div></a></div>
+      {% endif %}
+    {% endif %}
+    {% if post.excerpt %}
+      {% if include.type == "grid" %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 256 }}</p>
+      {% else %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 1024 }}</p>
+      {% endif %}
+    {% endif %}
+  </article>
+</div>

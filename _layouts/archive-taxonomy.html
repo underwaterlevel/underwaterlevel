@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+  <!-- Specialized sidebar.html that always displayed sidebar because
+  archive plugin has problems accepting template front matter. -->
+  {% include sidebar_taxonomy.html %}
+
+  <div class="archive">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% for post in page.posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </div>
+</div>

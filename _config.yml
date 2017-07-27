@@ -1,0 +1,86 @@
+title: Underwater Level
+email: your-email@example.com
+description: >
+  Yet another video game blog.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://qm9hmvsdyrhquirswbz3.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
+timezone: America/Tijuana
+locale: "en-US"
+
+include: ["_pages"]
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:slug.html
+theme: minimal-mistakes-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: /page:num/
+strict_front_matter: true
+breadcrumbs: false
+og_image: "/assets/images/logo.png"
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "single"
+      author_profile: false
+      read_time: false
+      comments: false
+      share: true
+      related: true
+      author: None
+      header:
+        overlay_image: "/assets/images/overlays/default.png"
+        overlay_filter: 0.5
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
+      author: None
+      sidebar:
+        nav: "sidebarnav"
+  -
+    scope:
+      path: "/categories/"
+    values:
+      sidebar:
+        nav: "sidebarnav"
+
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all

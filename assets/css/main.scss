@@ -1,0 +1,33 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+$paragraph-indent: false;
+$global-font-family: sans-serif;
+
+$background-color: #1a1a1a;
+$background-card-color: #404040;
+$body-color: $background-color;
+$code-background-color: $background-color;
+$code-background-color-dark: $background-color;
+
+$border-color               : #a0d8f8;
+
+$text-color                 : lightgray;
+$link-color                 : white;
+$masthead-link-color        : white;
+$link-color-hover           : #5078f8;
+$masthead-link-color-hover  : $link-color-hover;
+$navicon-link-color-hover   : $link-color-hover;
+
+$primary-color              : $background-color !default;
+$gray                       : darkgray !default;
+$dark-gray                  : mix(#000, $gray, 40%) !default;
+$darker-gray                : mix(#000, $gray, 60%) !default;
+$light-gray                 : $border-color;
+$lighter-gray               : mix(#fff, $gray, 90%) !default;
+
+
+@charset "utf-8";
+
+@import "minimal-mistakes";
