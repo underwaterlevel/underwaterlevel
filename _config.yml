@@ -23,6 +23,11 @@ strict_front_matter: true
 breadcrumbs: false
 og_image: "/assets/images/logo.png"
 
+analytics:
+  provider: "google-universal"
+  google:
+    tracking_id: "UA-103568394-1"
+
 defaults:
   -
     scope:
