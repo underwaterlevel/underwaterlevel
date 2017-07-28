@@ -27,6 +27,11 @@ $darker-gray                : mix(#000, $gray, 60%) !default;
 $light-gray                 : $border-color;
 $lighter-gray               : mix(#fff, $gray, 90%) !default;
 
+$success-color              : #62c462 !default;
+$warning-color              : #f89406 !default;
+$danger-color               : #ee5f5b !default;
+$info-color                 : #52adc8 !default;
+
 
 @charset "utf-8";
 

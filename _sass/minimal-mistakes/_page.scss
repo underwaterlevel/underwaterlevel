@@ -377,6 +377,10 @@
   @include clearfix();
   margin: 1em 0;
 
+  &.child {
+    padding-left: 32px;
+  }
+
   &:not(:last-child) {
     border-bottom: 1px solid $border-color;
   }

@@ -27,7 +27,7 @@ analytics:
   provider: "google-universal"
   google:
     tracking_id: "UA-103568394-1"
-    
+
 comments:
   provider: "staticman"
 repository:
@@ -52,6 +52,7 @@ defaults:
       header:
         overlay_image: "/assets/images/overlays/default.png"
         overlay_filter: 0.5
+      comments_locked: false
   -
     scope:
       path: ""
