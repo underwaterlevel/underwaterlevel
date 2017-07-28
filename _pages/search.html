@@ -6,9 +6,11 @@ permalink: /search/
 
 <form action="get" id="site_search">
   <center>
-    <input style="font-size:20px;color:black" type="text" id="search_box">
+    <fieldset>
+      <input type="text" id="search_box" tabindex="2" />
+    </fieldset>
   </center>
-  <input style="font-size:20px;color:black" type="submit" value="Go!">
+  <button type="submit" class="btn btn--large">Submit</button>
 </form>
 
 <ul id="search_results"></ul>
