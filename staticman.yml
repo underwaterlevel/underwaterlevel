@@ -11,3 +11,7 @@ comments:
         format: "timestamp-seconds"
   moderation: true
   path: "_data/comments/{options.slug}"
+  reCaptcha:
+    enabled: true
+    siteKey: "6Lft6ioUAAAAAH-mPHLMDjgrltxc1wauBrGE5vPQ"
+    secret: "XW6p2ZBoIUtMdCLBMQpm0hYiy43hy3Oe53oy58YBzi1ISszWpOC2/siaBU/m/qyleT/76Xa8nJWNIdbtNKGzaiPrXJ3bdchytNeEzj1AEYz1ev0A1vahOpyzq4jVLe937l/tAlL2OyToFI90xVHfwStaZU4f8f1/dxOfLzXJR5M="
