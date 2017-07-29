@@ -21,7 +21,7 @@ paginate: 10
 paginate_path: /page:num/
 strict_front_matter: true
 breadcrumbs: false
-og_image: "/assets/images/logo.png"
+og_image: "/assets/images/logo/logo.png"
 
 analytics:
   provider: "google-universal"

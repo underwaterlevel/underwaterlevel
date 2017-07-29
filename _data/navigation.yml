@@ -12,5 +12,3 @@ sidebarnav:
     children:
       - title: "Game Design"
         url: /categories/game-design/
-      - title: "Test"
-        url: /categories/test/
